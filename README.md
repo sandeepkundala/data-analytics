@@ -36,3 +36,14 @@ This repository contains the lab exercises for data analytics in IoT.
 ### Google ???
 ### Azure ???
 ### SAS Viya
+
+## Datasets 
+1. Data classification 
+      a. http://iot.ee.surrey.ac.uk:8080/datasets.html
+2. Regression 
+      a. https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FIE0S4
+3. Association rule discovery 
+      a. https://www.kaggle.com/benhamner/2016-us-election
+4. Anomaly detection 
+      a. https://www.kaggle.com/sampadab17/network-intrusion-detection/home
+
