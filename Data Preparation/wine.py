@@ -1,10 +1,10 @@
 '''
-Accuracy of Decision tree classifier for Wine Dataset (UCI)
+Accuracy of classifiers for Wine Dataset (UCI)
 -- Sandeep Kundala
 '''
 
 import pandas as pd
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
