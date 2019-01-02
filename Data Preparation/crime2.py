@@ -40,33 +40,24 @@ crime_data["Time"]= new[1]
 # Dropping old Dates columns 
 crime_data.drop(columns =["Dates"], inplace = True) 
 
+#To obtain correlation between different columns, we need to map the strings to a constant.
 
-columnsTitles=['Category', 'Date','Time', 'Descript', 'DayOfWeek', 'PdDistrict', 'Resolution', 'Address', 'X', 'Y', 'Catnum2']
+crime_data['category_id'] = crime_data['Category'].factorize()[0]
+crime_data['Date_id'] = crime_data['Date'].factorize()[0]
+crime_data['Time_id'] = crime_data['Time'].factorize()[0]
+crime_data['DayOfWeek_id'] = crime_data['DayOfWeek'].factorize()[0]
+crime_data['PdDistrict_id'] = crime_data['PdDistrict'].factorize()[0]
+crime_data['Resolution_id'] = crime_data['Resolution'].factorize()[0]
+crime_data['Address_id'] = crime_data['Address'].factorize()[0]
+columnsTitles=['Category', 'category_id', 'Date', 'Date_id','Time','Time_id', 'Descript', 'DayOfWeek', 'DayOfWeek_id','PdDistrict','PdDistrict_id', 'Resolution', 'Resolution_id','Address','Address_id', 'X', 'Y']
 crime_data=crime_data.reindex(columns=columnsTitles)
 
-#To obtain correlation between different columns, we need to map the strings to a constant.
-#The file below (CrimeModified.csv) is the modified version of the file Crime1.csv where every column except "Descript","X" and "Y" columns 
-#have been given a constant Number
-crime_data2 = pd.read_csv('C:/Users/Sandi/Downloads/CrimeModified.csv',
-                           sep= ',', header= 0)
-# we won't consider the column "Descript" for correlation check since the description for similar crimes varies and assigning a constant to a particular description is not a very good idea.
-# we also won't consider the column 'X' and 'Y' since these are coordinates and maps to unique 'AddNum'
-columnsTitles=['CatNum' ,'DateNum' ,'TimeNum' ,'DayNum' ,'DistNum' ,'ResNum' ,'AddNum']
-crime_data2 = crime_data2.reindex(columns=columnsTitles)
-
-correlations = crime_data2[crime_data2.columns].corr(method='pearson')
+correlations = crime_data[crime_data.columns].corr(method='pearson')
 sns.heatmap(correlations, cmap="YlGnBu", annot = True)
 
 # we see that there's not much correlation between the other columns and the category so we would consider the other approach i.e., use "Descript" column from
-# from Crime1.csv and search for keywords specific to the crime
+# Crime1.csv and search for keywords specific to the crime
 
-
-
-col = ['Category', 'Descript']
-crime_data = crime_data[col]
-crime_data.columns
-
-crime_data['category_id'] = crime_data['Category'].factorize()[0]
 category_id_df = crime_data[['Category', 'category_id']].drop_duplicates().sort_values('category_id')
 category_to_id = dict(category_id_df.values)
 id_to_category = dict(category_id_df[['category_id', 'Category']].values)
@@ -133,10 +124,3 @@ print("Accuracy of Logistic Regression:",metrics.accuracy_score(y_test, y_pred_l
 rfc = RandomForestClassifier(n_estimators=200, max_depth=3, random_state=0)
 y_pred_rfc = rfc.fit(X_train, y_train).predict(X_test)
 print("Accuracy of Random Forest Classifier:",metrics.accuracy_score(y_test, y_pred_rfc)*100)
-
-    
-
-
-
-
-    
