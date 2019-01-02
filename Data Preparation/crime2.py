@@ -25,7 +25,6 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 crime_data = pd.read_csv('C:/Users/Sandi/Downloads/Crime1.csv',
                            sep= ',', header= 0)
 
-#------- BEFORE CLEANING --------#
 columnsTitles=['Category', 'Dates', 'Descript', 'DayOfWeek', 'PdDistrict', 'Resolution', 'Address', 'X', 'Y']
 crime_data=crime_data.reindex(columns=columnsTitles)
 crime_data= crime_data[:3000]
