@@ -49,6 +49,9 @@ This repository contains the lab exercises for data analytics in IoT.
   
 ## References
 [1] https://www.stat.cmu.edu/~hseltman/309/Book/chapter4.pdf
+
 [2] https://www.kaggle.com/pavansanagapati/a-simple-tutorial-on-exploratory-data-analysis
+
 [3] https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15
+
 
