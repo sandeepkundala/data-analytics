@@ -10,30 +10,32 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.naive_bayes import ComplementNB
-
+from sklearn.naive_bayes import BernoulliNB
 from sklearn import metrics
+import seaborn as sns
 
 
-wine_data = pd.read_csv('C:/Users/Sandi/Downloads/Wine.csv',
-                           sep= ',', header= None)
+wine_data = pd.read_csv('C:/Users/Sandi/Downloads/Wine.csv', sep= ',', header= None)
 wine_data.columns = ['Class', 'Alcohol', 'Malic acid', 'Ash', 'Alcalinity of ash', 'Magnesium', 'Total phenols', 'Flavanoids', 'Nonflavanoid phenols', 'Proanthocyanins', 'Color intensity', 'Hue', 'OD280/OD315 of diluted wines', 'Proline']
 
+correlations = wine_data[wine_data.columns].corr(method='pearson')
+sns.heatmap(abs(correlations), cmap="YlGnBu", annot = True)
+
 #DTC
-clf_gini = DecisionTreeClassifier(criterion = "gini", random_state = 0,
-                               min_samples_split =3)
-clf_entropy = DecisionTreeClassifier(criterion = "entropy", random_state = 0,
-                               min_samples_split =3)
+clf_gini = DecisionTreeClassifier(criterion = "gini", random_state = 0, min_samples_split =3)
+clf_entropy = DecisionTreeClassifier(criterion = "entropy", random_state = 0, min_samples_split =3)
 
 #KNN
-knn = KNeighborsClassifier(n_neighbors=5)
+knn = KNeighborsClassifier(n_neighbors=25)
 
 #NAIVE BAYES
 gnb = GaussianNB()
 mnb = MultinomialNB()
 cnb = ComplementNB()
+bnb = BernoulliNB()
 
 #------- BEFORE CLEANING --------#
-X_bc = wine_data.values[:, 1:13]
+X_bc = wine_data.values[:, 1:]
 Y_bc = wine_data.values[:,0]
 X_train_bc, X_test_bc, y_train_bc, y_test_bc = train_test_split( X_bc, Y_bc, test_size = 0.2, random_state=0)
 
@@ -55,10 +57,10 @@ y_pred_bc_cnb = cnb.fit(X_train_bc, y_train_bc).predict(X_test_bc)
 
 #----------AFTER CLEANING-----------------------------------------------------
 
-to_drop = ['Malic acid', 'Ash',  'Magnesium', 'Total phenols', 'Nonflavanoid phenols', 'Proanthocyanins']
-
+to_drop = ['Ash']
 wine_data.drop(to_drop, inplace=True, axis=1)
-X_ac = wine_data.values[:, 1:6]
+X_ac = wine_data.values[:, 1:]
+
 Y_ac = wine_data.values[:,0]
 X_train_ac, X_test_ac, y_train_ac, y_test_ac = train_test_split( X_ac, Y_ac, test_size = 0.2, random_state=0)
 
