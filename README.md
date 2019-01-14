@@ -4,7 +4,7 @@ This repository contains the lab exercises for data analytics in IoT.
 
 ## Part 1: Data Preparation
 
-### [Understanding the data](Data%20Preparation/README.md)
+### ["Understanding the data"](https://github.ncsu.edu/IoT-ECE-NCSU/data-analytics/blob/master/Data%20Preparation/README.md)
 ### “Collecting” the data
 ### “Cleaning” the data
 
@@ -17,7 +17,9 @@ This repository contains the lab exercises for data analytics in IoT.
 
 ### Monitoring Analytics
 ### Predictive Analytics
-   1. [Data Classification](Predictive%20Analytics/Data%20Classfication/README.md)
+   1. [Data Classification](https://github.ncsu.edu/IoT-ECE-NCSU/data-analytics/blob/master/Predictive%20Analytics/Data%20Classfication/README.md)
+         1. [Wine Classification](https://github.ncsu.edu/IoT-ECE-NCSU/data-analytics/blob/master/Data%20Preparation/wine.ipynb)
+         2. [Crime Classification](https://github.ncsu.edu/IoT-ECE-NCSU/data-analytics/blob/master/Data%20Preparation/crime.ipynb)
 ### Acting Analytics
 ### Streaming Analytics
 
@@ -40,13 +42,15 @@ This repository contains the lab exercises for data analytics in IoT.
 
 ## Datasets 
 1. Data classification 
-  * http://iot.ee.surrey.ac.uk:8080/datasets.html
+      1. [City Pulse - EU Smart City Dataset](http://iot.ee.surrey.ac.uk:8080/datasets.html)
+      2. [Wine Dataset](https://archive.ics.uci.edu/ml/datasets/wine)
+      3. [San Francisco PD Crime Dataset](https://www.kaggle.com/abidaaslam/crime)
 2. Regression 
-  * https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FIE0S4
+      1. [Power Consumption of a House Dataset](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/FIE0S4)
 3. Association rule discovery 
-  * https://www.kaggle.com/benhamner/2016-us-election
+      1. [2016 US Presidential Election Dataset](https://www.kaggle.com/benhamner/2016-us-election)
 4. Anomaly detection 
-  * https://www.kaggle.com/sampadab17/network-intrusion-detection/home
+      1. [US Air Force LAN Network Dataset](https://www.kaggle.com/sampadab17/network-intrusion-detection/home)
   
 ## References
 [1] https://www.stat.cmu.edu/~hseltman/309/Book/chapter4.pdf
