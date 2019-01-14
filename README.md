@@ -4,7 +4,7 @@ This repository contains the lab exercises for data analytics in IoT.
 
 ## Part 1: Data Preparation
 
-### Understanding the data
+### [Understanding the data](Data%20Preparation/README.md)
 ### “Collecting” the data
 ### “Cleaning” the data
 
@@ -17,6 +17,7 @@ This repository contains the lab exercises for data analytics in IoT.
 
 ### Monitoring Analytics
 ### Predictive Analytics
+   1. [Data Classification](Predictive%20Analytics/Data%20Classfication/README.md)
 ### Acting Analytics
 ### Streaming Analytics
 
