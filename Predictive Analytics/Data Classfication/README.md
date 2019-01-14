@@ -37,6 +37,7 @@ There can be two goals associated with a classification task.
 Overfitting -  Model fits the training data well, but not the test dataset. This is mainly due to noise in the data or lack of representative records for some classes. If there is noise in the data the decision boundary may split because of that noise data. However, if there is lack of representative records for some classes, those data points will be misclassified on the test data. Overfitting can't be estimated on the basis of training error. We may need to prune decision trees if we are using decision trees for classification.
 
 Underfitting - Model is too simple, with high errors on the training as well as the test dataset.
+
 2. #### Missing Values
 3. #### Cost of classification
 
